@@ -12,12 +12,16 @@ def Turl(position, location, dateposted):
     template = 'https://ca.indeed.com/jobs?q=Summer+Internship&l=Mississauga%2C+ON&fromage=3'
     position = position.replace(' ', '+')
     location = location.replace(' ', '+')
-    dateposted = dateposted.replace(' ', '+')
-    url = template.format(position, location, dateposted)
+    datepostede = datepostede.replace(' ', '+')
+    url = template.format(position, location, datepostede)
     return url
 
 url = Turl('Summer Intern', 'Mississauga ON', '2')
 
 repsone = requests.get(url)
+
+total_externals_apps = csv.get_total("total workday applcaitions")
+
+mywordayurl_row(i)
 
 Turl("intern", "mississauga", "3")
