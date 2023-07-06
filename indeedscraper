@@ -19,3 +19,5 @@ def Turl(position, location, dateposted):
 url = Turl('Summer Intern', 'Mississauga ON', '2')
 
 repsone = requests.get(url)
+
+Turl("intern", "mississauga", "3")

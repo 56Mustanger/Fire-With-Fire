@@ -1,13 +1,17 @@
 from playwright.sync_api import Playwright, sync_playwright, expect
 import time
+from subprocess import call
 
 
 def run(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(headless=False)
     context = browser.new_context()
+    
+    url = call(['pyhton', 'indeedscraper.py'])
+
     page = context.new_page()
     page.goto(
-        "https://capri.wd1.myworkdayjobs.com/en-US/Michael_Kors/job/Stock-Associate-PT--Toronto-Eaton-Center_R_761493") 
+        "url") 
     page.get_by_role("button", name="Apply").click()
     page.get_by_role("button", name="Apply Manually").click()
 
